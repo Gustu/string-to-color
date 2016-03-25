@@ -1,0 +1,24 @@
+{
+  "name": "StringColor",
+  "version": "0.0.1",
+  "description": "Generates color from any string",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:Gustu/String-to-color.git"
+  },
+  "keywords": [
+    "color",
+    "text",
+    "string"
+  ],
+  "author": "Bartłomiej Pasik",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
