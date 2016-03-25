@@ -24,6 +24,13 @@ var _ = require ('string-to-color');
 var hex = _.generate('string', 1234, 1234);
 ```
 
+or just generate color from any object event null!
+
+```
+var _ = require ('string-to-color');
+var hex = _.generateFromAny(null);
+```
+
 ## License
 
 MIT.
