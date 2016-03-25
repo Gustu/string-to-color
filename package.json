@@ -1,5 +1,5 @@
 {
-  "name": "StringColor",
+  "name": "string-color",
   "version": "0.0.1",
   "description": "Generates color from any string",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:Gustu/String-to-color.git"
+    "url": "git://github.com:Gustu/string-color.git"
   },
   "keywords": [
     "color",

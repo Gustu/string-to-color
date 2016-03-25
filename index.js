@@ -17,7 +17,13 @@ module.exports = {
         return generateColor(text, seed, factor);
     },
     generateFromAny: function (any) {
-        return generateColor(String(any));
+        return generateColor(String(any), null, null);
+    },
+    generateFromAny: function (any, seed) {
+        return generateColor(String(any), seed, null);
+    },
+    generateFromAny: function (any, seed, factor) {
+        return generateColor(String(any), seed, factor);
     }
 };
 
