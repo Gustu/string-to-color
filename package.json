@@ -1,14 +1,14 @@
 {
-  "name": "string-color",
+  "name": "string-to-color",
   "version": "0.0.1",
-  "description": "Generates color from any string",
+  "description": "Generates color from any string or any object",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:Gustu/string-color.git"
+    "url": "git://github.com:Gustu/string-to-color.git"
   },
   "keywords": [
     "color",
