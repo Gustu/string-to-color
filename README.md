@@ -1,6 +1,8 @@
-# Color Name
+# String to color
 
-Time invariant color from any string or object.
+[![npm version](https://badge.fury.io/js/string-to-color.svg)](https://badge.fury.io/js/string-to-color)
+
+Generate time invariant color from any string or any object.
 
 ## Install
 
