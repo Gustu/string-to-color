@@ -4,16 +4,17 @@
   "description": "Generates color from any string or any object",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "./node_modules/.bin/mocha test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:Gustu/string-to-color.git"
+    "url": "https://github.com/Gustu/string-to-color.git"
   },
   "keywords": [
     "color",
     "text",
-    "string"
+    "string",
+    "generate"
   ],
   "author": "Bartłomiej Pasik",
   "license": "MIT",
