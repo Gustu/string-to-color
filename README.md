@@ -12,23 +12,30 @@ npm install string-to-color
 
 ## Usage
 
-```
+```js
 var _ = require ('string-to-color');
 var hex = _.generate('string');
 ```
 
 or you can use your own seed and factor (both are optional)
 
-```
+```js
 var _ = require ('string-to-color');
 var hex = _.generate('string', 1234, 1234);
 ```
 
 or just generate color from any object event null!
 
-```
+```js
 var _ = require ('string-to-color');
 var hex = _.generateFromAny(null);
+```
+
+Ex. output
+
+```js
+generate('example');
+//=> '659975'
 ```
 
 ## License
