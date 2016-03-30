@@ -21,21 +21,14 @@ or you can use your own seed and factor (both are optional)
 
 ```js
 var _ = require ('string-to-color');
-var hex = _.generate('string', 1234, 1234); // => "00"
+var hex = _.generateWithSeedFactor('string', 1234, 1234); // => "00"
 ```
 
 or just generate color from any object, even null!
 
 ```js
 var _ = require ('string-to-color');
-var hex = _.generateFromAny(null);
-```
-
-Ex. output
-
-```js
-generate('example');
-//=> '659975'
+var hex = _.generateAny(null); // => "1ad64b"
 ```
 
 ## License
