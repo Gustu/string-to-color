@@ -12,14 +12,14 @@ npm install string-to-color
 
 ```
 var _ = require ('string-to-color');
-var hex = _.generate('string');
+var hex = _.generate('string'); // => "7f1de4"
 ```
 
 or you can use your own seed and factor (both are optional)
 
 ```
 var _ = require ('string-to-color');
-var hex = _.generate('string', 1234, 1234);
+var hex = _.generate('string', 1234, 1234); // => "00"
 ```
 
 ## License
