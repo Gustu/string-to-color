@@ -45,6 +45,11 @@ describe('generate', function () {
         var hex = _.generateWithSeedFactor("test", 123, 123);
         should.exist(hex);
     });
+
+    it('should generate 6 hex chars when seed is too low', function () {
+        var hex = _.generateWithSeed("test", 1);
+        hex.length.should.be.equal(6);
+    });
 });
 describe('generateAny', function () {
     it('should return color from null', function () {

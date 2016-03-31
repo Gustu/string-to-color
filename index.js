@@ -100,21 +100,17 @@ function generateColor(text, seed, factor) {
     var color = getFirstColor(text);
     if(color) return _.trimStart(color, '#');
 
-    var b = 0;
+    var b = 1;
     var d = 0;
-    var splitted = text.split('');
     var f = 1;
     seed = seed || 16777215;
     factor = factor || 49979693;
 
     if (text.length > 0) {
-        for (var i = 0; i < splitted.length; i++)
-            splitted[i].charCodeAt(0) > d && (d = splitted[i].charCodeAt(0)), f = parseInt(seed / d),
-                b = (b + splitted[i].charCodeAt(0) * f * factor) % seed;
+        for (var i = 0; i < text.length; i++)
+            text[i].charCodeAt(0) > d && (d = text[i].charCodeAt(0)), f = parseInt(seed / d),
+                b = (b + text[i].charCodeAt(0) * f * factor) % seed;
     }
-    var hex = (b * splitted.length % seed).toString(16);
-    if (hex.length < 6) {
-        hex = hex + hex.substring(0, 6 - hex.length);
-    }
-    return hex;
+    var hex = (b * text.length % seed).toString(16);
+    return _.padEnd(hex, 6, hex);
 }
