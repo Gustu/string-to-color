@@ -1,5 +1,7 @@
 var should = require('chai').should();
 var _ = require('../index');
+var rgbHex = require('rgb-hex');
+var hexRgb = require('hex-rgb');
 
 describe('generate', function () {
     it('should return same hex when same string provided', function () {
@@ -25,14 +27,16 @@ describe('generate', function () {
         should.not.exist(hex);
     });
 
-    it('should return red hex', function () {
+    it('should return more reddish color', function () {
         var hex = _.generate("i am a red fox");
-        hex.should.be.equal("FF0000");
+        var rgb = hexRgb(hex);
+        rgb[0].should.be.above(rgb[1]);
+        rgb[0].should.be.above(rgb[2]);
     });
 
-    it('should return first color when provided multiple color names', function () {
-        var hex = _.generate("red blue black white");
-        hex.should.be.equal("FF0000");
+    it('should mix multiple color names with text', function () {
+        var hex = _.generate("red green blue");
+        hex.should.not.be.equal(rgbHex(255 / 3, 128 / 3, 255 / 3));
     });
 
     it('should return different hex when using different factors', function () {

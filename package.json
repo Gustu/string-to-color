@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "colornames": "^1.1.1",
-    "lodash": "^4.6.1"
+    "hex-rgb": "^1.0.0",
+    "lodash": "^4.6.1",
+    "rgb-hex": "^1.0.0"
   }
 }
