@@ -28,10 +28,16 @@ or just generate color from any object, even null!
 var hex = _.generateAny(null); // => "1ad64b"
 ```
 
-Another feature is that when your string contains color name output will be equal to that color
+Another feature is that when your string contains color name, output will more or less equal to that color
 
 ```js
-var hex = _.generate("i am a red fox"); // => "FF0000"
+var hex = _.generate("i am a red fox"); // => "f03d22"
+```
+
+When multiple colors are provided, they will be mixed with each other
+
+```js
+var hex = _.generate("red green blue"); // => "7f5b78"
 ```
 
 
