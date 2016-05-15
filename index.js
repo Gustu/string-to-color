@@ -10,84 +10,34 @@ const FACTOR = 49979693;
 
 module.exports = {
     /**
-     * Generates hex color from text.
+     * Generates hex color from object.
      *
-     * @param   {String} text
+     * @param   {String} object
      * @return  {String} hexColor
      */
-    generate: function (text) {
-        return generateColor(text, null, null);
+    generate: function (object) {
+        return generateColor(String(object));
     },
     /**
-     * Generates hex color from text.
+     * Generates hex color from object.
      *
-     * @param   {String} text
-     * @param   {Number} seed Starting seed
+     * @param   {String} object
+     * @param   {Number} seed Starting seed - optional
      * @return  {String} hexColor
      */
-    generateWithSeed: function (text, seed) {
-        return generateColor(text, seed, null);
+    generate: function (object, seed) {
+        return generateColor(String(object), seed);
     },
     /**
-     * Generates hex color from text.
+     * Generates hex color from object.
      *
-     * @param   {String} text
-     * @param   {Number} factor Scale of color changes
+     * @param   {String} object
+     * @param   {Number} seed Starting seed - optional
+     * @param   {Number} factor Scale of color changes - optional
      * @return  {String} hexColor
      */
-    generateWithFactor: function (text, factor) {
-        return generateColor(text, null, factor);
-    },
-    /**
-     * Generates hex color from text.
-     *
-     * @param   {String} text
-     * @param   {Number} seed Starting seed
-     * @param   {Number} factor Scale of color changes
-     * @return  {String} hexColor
-     */
-    generateWithSeedFactor: function (text, seed, factor) {
-        return generateColor(text, seed, factor);
-    },
-    /**
-     * Generates hex color from any object.
-     *
-     * @param   {Object} any
-     * @return  {String} hexColor
-     */
-    generateAny: function (any) {
-        return generateColor(String(any), null, null);
-    },
-    /**
-     * Generates hex color from any object.
-     *
-     * @param   {Object} any
-     * @param   {Number} seed Starting seed
-     * @return  {String} hexColor
-     */
-    generateAnyWithSeed: function (any, seed) {
-        return generateColor(String(any), seed, null);
-    },
-    /**
-     * Generates hex color from any object.
-     *
-     * @param   {Object} any
-     * @param   {Number} factor Scale of color changes
-     * @return  {String} hexColor
-     */
-    generateAnyWithFactor: function (any, factor) {
-        return generateColor(String(any), null, factor);
-    },
-    /**
-     * Generates hex color from any object.
-     *
-     * @param   {Object} any
-     * @param   {Number} seed Starting seed
-     * @param   {Number} factor Scale of color changes
-     * @return  {String} hexColor
-     */
-    generateAnyWithSeedFactor: function (any, seed, factor) {
-        return generateColor(String(any), seed, factor);
+    generate: function (object, seed, factor) {
+        return generateColor(String(object), seed, factor);
     }
 };
 
@@ -111,7 +61,6 @@ function mixColors(colors) {
 }
 
 function generateColor(text, seed, factor) {
-    if (!text) return null;
     var mixed;
     var colors = getColors(text);
     if (colors.length > 0) mixed = mixColors(colors);

@@ -21,13 +21,13 @@ var hex = _.generate('string'); // => "7f1de4"
 or you can use your own seed and factor (both are optional)
 
 ```js
-var hex = _.generateWithSeedFactor('string', 1234, 1234); // => "000000"
+var hex = _.generate('string', 1234, 1234); // => "000000"
 ```
 
 or just generate color from any object, even null!
 
 ```js
-var hex = _.generateAny(null); // => "1ad64b"
+var hex = _.generate(null); // => "1ad64b"
 ```
 
 Another feature is that when your string contains color name, output will more or less equal to that color
@@ -45,14 +45,12 @@ var hex = _.generate("red green blue"); // => "7f5b78"
 
 ## API
 
+Seed and Factor can be null.
+
 * ```generate(text)```
-* ```generateWithSeed(text, seed)```
-* ```generateWithFactor(text, factor)```
-* ```generateWithSeedFactor(text, seed, factor)```
-* ```generateAny(any)```
-* ```generateAnyWithSeed(any, seed)```
-* ```generateAnyWithFactor(any, factor)```
-* ```generateAnyWithSeedFactor(any, seed, factor)```
+* ```generate(text, seed)```
+* ```generate(text, seed, factor)```
+
 
 ## License
 
