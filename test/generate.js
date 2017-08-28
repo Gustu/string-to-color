@@ -51,6 +51,12 @@ describe('generate', function () {
     });
 });
 describe('generateAny', function () {
+
+    it('should return color from undefined', function () {
+        var hex = _.generate(undefined);
+        should.exist(hex);
+    });
+
     it('should return color from null', function () {
         var hex = _.generate(null);
         should.exist(hex);
