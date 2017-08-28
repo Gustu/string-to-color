@@ -62,6 +62,12 @@ describe('generateAny', function () {
         should.exist(hex);
     });
 
+    it('should return a different hex when different objects are provided', function () {
+        var hex = _.generate({ test1: { test1b: 'test_1b' }, test2: 'test2' });
+        var hex2 = _.generate({ test3: { test3b: 'test_3b' }, test4: 'test4' });
+        hex.should.not.be.equal(hex2);
+    });
+
     it('should return same hex when same string provided', function () {
         var hex = _.generate("test");
         var hex2 = _.generate("test");
