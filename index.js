@@ -16,7 +16,7 @@ module.exports = {
      * @return  {String} hexColor
      */
     generate: function (object) {
-        return generateColor(JSON.stringify(object));
+        return generateColor(String(JSON.stringify(object)));
     },
     /**
      * Generates hex color from object.
@@ -26,7 +26,7 @@ module.exports = {
      * @return  {String} hexColor
      */
     generate: function (object, seed) {
-        return generateColor(JSON.stringify(object), seed);
+        return generateColor(String(JSON.stringify(object)), seed);
     },
     /**
      * Generates hex color from object.
@@ -37,7 +37,7 @@ module.exports = {
      * @return  {String} hexColor
      */
     generate: function (object, seed, factor) {
-        return generateColor(JSON.stringify(object), seed, factor);
+        return generateColor(String(JSON.stringify(object)), seed, factor);
     }
 };
 
