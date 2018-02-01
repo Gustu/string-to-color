@@ -2,7 +2,7 @@
 
 ![Alt text](/assets/img.png?raw=true "Sample")
 
-[![npm version](https://badge.fury.io/js/string-to-color.svg)](https://badge.fury.io/js/string-to-color)
+[![npm version](https://badge.fury.io/js/string-to-color.svg)](https://badge.fury.io/js/string-to-color) [![npm downloads](https://img.shields.io/npm/dm/string-to-color.svg)
 
 Generate time invariant color from any string or any object.
 
