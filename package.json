@@ -1,6 +1,6 @@
 {
   "name": "string-to-color",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Generates color from any string or any object",
   "main": "index.js",
   "scripts": {
@@ -19,13 +19,13 @@
   "author": "Bartłomiej Pasik",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   },
   "dependencies": {
     "colornames": "^1.1.1",
     "hex-rgb": "^1.0.0",
-    "lodash": "^4.6.1",
-    "rgb-hex": "^1.0.0"
+    "lodash": "^4.17.11",
+    "rgb-hex": "^2.1.0"
   }
 }
