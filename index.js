@@ -1,5 +1,5 @@
 var toHex = require('colornames');
-var words = require('lodash.words');
+var _words = require('lodash.words');
 var trimStart = require('lodash.trimstart');
 var padEnd = require('lodash.padend');
 var rgbHex = require('rgb-hex');
@@ -15,7 +15,7 @@ module.exports = function(object) {
 };
 
 function getColors(text) {
-  var words = words(text);
+  var words = _words(text);
   var colors = [];
   words.forEach(function(word) {
     var color = toHex(word);
