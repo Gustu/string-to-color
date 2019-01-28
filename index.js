@@ -1,7 +1,4 @@
 var toHex = require('colornames');
-var _words = require('lodash.words');
-var trimStart = require('lodash.trimstart');
-var padEnd = require('lodash.padend');
 var rgbHex = require('rgb-hex');
 var hexRgb = require('hex-rgb');
 
@@ -15,11 +12,11 @@ module.exports = function(object) {
 };
 
 function getColors(text) {
-  var words = _words(text);
+  var words = text.match(/\w+/);
   var colors = [];
   words.forEach(function(word) {
     var color = toHex(word);
-    if (color) colors.push(hexRgb(trimStart(color, '#')));
+    if (color) colors.push(hexRgb(color.replace(/^#/, '')));
   });
   return colors;
 }
@@ -46,7 +43,7 @@ function generateColor(text) {
         (b = (b + text[i].charCodeAt(0) * f * FACTOR) % SEED);
   }
   var hex = ((b * text.length) % SEED).toString(16);
-  hex = padEnd(hex, 6, hex);
+  hex = hex.repeat(6).slice(0, 6);
   var rgb = hexRgb(hex);
   if (mixed)
     return rgbHex(
