@@ -69,16 +69,10 @@ describe('generateAny', function () {
         hex.should.be.equal(hex2);
     });
 
-    it('should return not same hex when same string provided', function () {
+    it('should return not same hex when different strings are provided', function () {
         var hex = generate("test");
         var hex2 = generate("test2");
         hex.should.not.be.equal(hex2);
-    });
-
-    it('should return same value as generate', function () {
-        var hex = generate("test");
-        var hex2 = generate("test");
-        hex.should.be.equal(hex2);
     });
 
 });
