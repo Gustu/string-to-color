@@ -17,7 +17,7 @@ yarn add string-to-color
 
 ## Demo
 
-http://Gustu.github.io/string-to-color
+https://gustu.github.io/string-to-color/
 
 ## Usage
 
