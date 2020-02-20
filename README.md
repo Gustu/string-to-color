@@ -11,31 +11,38 @@ Generate time invariant color from any string or any object.
 ```bash
 npm install string-to-color
 ```
+```bash
+yarn add string-to-color
+```
+
+## Demo
+
+http://Gustu.github.io/string-to-color
 
 ## Usage
 
 ```js
-var generate = require('string-to-color');
-var hex = generate('string'); // => "#7f1de4"
+const stc = require('string-to-color');
+const color = stc('string'); // => "#7f1de4"
 ```
 
 
 or just generate color from any object, even null!
 
 ```js
-var hex = generate(null); // => "#1ad64b"
+const color = stc(null); // => "#1ad64b"
 ```
 
 Another feature is that when your string contains color name, output will more or less equal to that color
 
 ```js
-var hex = generate("i am a red fox"); // => "#f03d22"
+const color = stc("i am a red fox"); // => "#f03d22"
 ```
 
 When multiple colors are provided, they will be mixed with each other
 
 ```js
-var hex = generate("red green blue"); // => "#7f5b78"
+const color = stc("red green blue"); // => "#7f5b78"
 ```
 
 ## License
