@@ -19,7 +19,7 @@ function getColors(text) {
   var colors = [];
   words.forEach(function(word) {
     var color = toHex(word);
-    if (color) colors.push(hexRgb(trimStart(color, '#')));
+    if (color) colors.push(hexRgb(trimStart(color, '#'), {format: 'array'}));
   });
   return colors;
 }
@@ -47,7 +47,7 @@ function generateColor(text) {
   }
   var hex = ((b * text.length) % SEED).toString(16);
   hex = padEnd(hex, 6, hex);
-  var rgb = hexRgb(hex);
+  var rgb = hexRgb(hex, {format: 'array'});
   if (mixed)
     return rgbHex(
       TEXT_WEIGHT * rgb[0] + MIXED_WEIGHT * mixed[0],
