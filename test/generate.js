@@ -17,7 +17,7 @@ describe('generate', function () {
 
     it('should return more reddish color', function () {
         var hex = generate("i am a red fox");
-        var rgb = hexRgb(hex);
+        var rgb = hexRgb(hex, {format: 'array'});
         rgb[0].should.be.above(rgb[1]);
         rgb[0].should.be.above(rgb[2]);
     });
