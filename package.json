@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/Gustu/string-to-color.git"
   },
+  "type": "module",
   "keywords": [
     "color",
     "text",
@@ -19,9 +20,10 @@
   "author": "Bartłomiej Pasik",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "gh-pages": "^3.1.0",
-    "mocha": "^8.0.1"
+    "mocha": "^8.3.2",
+    "standard": "^16.0.3"
   },
   "dependencies": {
     "colornames": "^1.1.1",
