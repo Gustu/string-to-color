@@ -1,58 +1,63 @@
-var toHex = require('colornames');
-var _words = require('lodash.words');
-var trimStart = require('lodash.trimstart');
-var padEnd = require('lodash.padend');
-var rgbHex = require('rgb-hex');
-var hexRgb = require('hex-rgb');
+import toHex  from 'colornames'
+import words from 'lodash.words'
+import trimStart from 'lodash.trimstart'
+import padEnd from 'lodash.padend'
+import rgbHex from 'rgb-hex'
+import hexRgb from 'hex-rgb'
 
-const MIXED_WEIGHT = 0.75;
-const TEXT_WEIGHT = 0.25;
-const SEED = 16777215;
-const FACTOR = 49979693;
+const MIXED_WEIGHT = 0.75
+const TEXT_WEIGHT = 0.25
+const SEED = 16777215
+const FACTOR = 49979693
 
-module.exports = function(object) {
-  return '#' + generateColor(String(JSON.stringify(object)));
+export default function (object) {
+  return '#' + generateColor(String(JSON.stringify(object)))
 };
 
-function getColors(text) {
-  var words = _words(text);
-  var colors = [];
-  words.forEach(function(word) {
-    var color = toHex(word);
-    if (color) colors.push(hexRgb(trimStart(color, '#'), {format: 'array'}));
-  });
-  return colors;
+function getColors (text) {
+  const _words = words(text)
+  const colors = _words
+    .map((word) => toHex(word))
+    .filter(Boolean)
+    .map(color => trimStart(color, '#'))
+    .map(hexa => hexRgb(hexa, { format: 'array' }))
+  return colors
 }
 
-function mixColors(colors) {
-  var mixed = [0, 0, 0];
-  colors.forEach(function(value) {
-    for (var i = 0; i < 3; i++) mixed[i] += value[i];
-  });
-  return [mixed[0] / colors.length, mixed[1] / colors.length, mixed[2] / colors.length];
+function mixColors (colors) {
+  const mixed = [0, 0, 0]
+  colors.forEach((value) => {
+    mixed[0] += value[0]
+    mixed[1] += value[1]
+    mixed[2] += value[2]
+  })
+  return mixed.map(value => value / colors.length);
 }
 
-function generateColor(text) {
-  var mixed;
-  var colors = getColors(text);
-  if (colors.length > 0) mixed = mixColors(colors);
-  var b = 1;
-  var d = 0;
-  var f = 1;
-  if (text.length > 0) {
-    for (var i = 0; i < text.length; i++)
-      text[i].charCodeAt(0) > d && (d = text[i].charCodeAt(0)),
-        (f = parseInt(SEED / d)),
-        (b = (b + text[i].charCodeAt(0) * f * FACTOR) % SEED);
-  }
-  var hex = ((b * text.length) % SEED).toString(16);
-  hex = padEnd(hex, 6, hex);
-  var rgb = hexRgb(hex, {format: 'array'});
-  if (mixed)
+function generateColor (text) {
+  let mixed
+  const colors = getColors(text)
+  if (colors.length) mixed = mixColors(colors)
+  let b = 1
+  let d = 0
+  let f = 1
+
+  text.split('').map(letter => letter.charCodeAt(0))
+  .forEach(letter => {
+    letter > d && (d = letter), 
+    (f = parseInt(SEED / d)), 
+    (b = (b + letter * f * FACTOR) % SEED)
+  })
+
+  let hex = ((b * text.length) % SEED).toString(16)
+  hex = padEnd(hex, 6, hex)
+  const rgb = hexRgb(hex, { format: 'array' })
+  if (mixed) {
     return rgbHex(
       TEXT_WEIGHT * rgb[0] + MIXED_WEIGHT * mixed[0],
       TEXT_WEIGHT * rgb[1] + MIXED_WEIGHT * mixed[1],
       TEXT_WEIGHT * rgb[2] + MIXED_WEIGHT * mixed[2]
-    );
-  return hex;
+    )
+  }
+  return hex
 }
