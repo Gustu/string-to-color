@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "colornames": "^1.1.1",
-    "hex-rgb": "^4.1.0",
+    "hex-rgb": "^5.0.0",
     "lodash.padend": "^4.6.1",
     "lodash.trimstart": "^4.5.1",
     "lodash.words": "^4.2.0",
