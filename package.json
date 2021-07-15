@@ -29,6 +29,6 @@
     "lodash.padend": "^4.6.1",
     "lodash.trimstart": "^4.5.1",
     "lodash.words": "^4.2.0",
-    "rgb-hex": "^3.0.0"
+    "rgb-hex": "^4.0.0"
   }
 }
