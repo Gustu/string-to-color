@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "mocha": "^9.0.2"
   },
   "dependencies": {
